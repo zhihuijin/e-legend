@@ -10,7 +10,7 @@ def ComputeE():
     print n, e
 
   print 'time math.pow(1 + 1.0/n, n)'
-  for n in [1, 2, 3, 12, 365/7,  365, 365*24,  365*24*60, 365*24*60*60]:
+  for n in [1, 2, 4, 12, 52, 365, 365*24, 365*24*60, 365*24*60*60]:
     e = math.pow(1 + 1.0/n, n)
     print n, e
 
@@ -39,6 +39,7 @@ def ComputeEReciprocal(n):
   return result
 
 
+ComputeE()
 for n in [10, 100]:
   print ComputeEReciprocal(n)
 
