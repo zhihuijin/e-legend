@@ -17,7 +17,7 @@
 }
 
 \section{财主与打工仔的故事}
-在十七世纪欧洲瑞士有个大财主叫雅克比伯努利，这个财主相当有钱。有钱人挣钱的方式
+在十七世纪欧洲瑞士有个大财主叫雅克比·伯努利，这个财主相当有钱。有钱人挣钱的方式
 就是钱生钱，把钱借出去，然后再加倍收回来，这样钱就像滚雪球一样越来越多。有一天
 一个没钱的打工仔找到了伯努利老爷，想找伯努利老爷借钱去做点小本生意，伯努利老爷
 很爽快的答应了。但是伯努利老爷告诉打工仔，说他借钱年利率很高，高达百分之百。打
@@ -76,10 +76,10 @@ $$ \lim_{n \to \infty}(1+\frac{1}{n})^n = e $$
 
 从这个例子我们就能看出 $e$ 和钱重要联系。下表列出了按照不同的计息时间单位，一年
 之后打工仔欠伯努利老爷的钱数。
+
 \begin{table}[htbp]
 \centering
 \caption{打工仔的欠债}
-\label{my-label}
 \begin{tabular}{|l|l|l|}
 \hline
 利息计算时间单位 & n        & 欠钱总数                         \\ \hline
@@ -92,17 +92,53 @@ $$ \lim_{n \to \infty}(1+\frac{1}{n})^n = e $$
 每小时      & 8760     & $ (1+1/8760)^{8760}=2.718126692 $     \\ \hline
 每分钟      & 525600   & $ (1+525600)^{525600}=2.718279243 $   \\ \hline
 每秒钟      & 31536000 & $ (1+31536000)^{31536000}=2.718281778 $ \\ \hline
-\cdots   & \cdots   & \cdots                                   \\ \hline
 \end{tabular}
 \end{table}
+
+计算 $e$ 的 python 代码请参考下面的代码片段。
+
+\lstinputlisting[firstline=13,lastline=15,caption={计算 $e$ 的 python 代码 }]{e-compute.py}
 
 \section{复利}
 上面伯努利老爷算钱的方式其实基本上就是现如今我们银行计算贷款的方式——复利，也就
 是大家熟知的利滚利，利息接着产生利息。只是现在银行通常以天为单位来计息，而且年
 利率也不会有百分之百那么高，通常是百分之三到百分之五。
+
+下面这张图显示了年利率为20\%时，分别按照年（n=1）、季度（n=4）、月份（n=12）和
+时间无穷细分（n 趋向于无穷大 ）时的复利增长曲线。
+
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.5]{money/interest.png}
+\includegraphics[width=0.9\linewidth]{money/interest.png}
 \caption{年利率20\%的复利增长曲线}
 \centering
+\end{figure}
+
+上面的故事实际上是一个虚构的故事，雅克比·伯努利（1654-1705）历史上实际上是一个
+非常有名的数学家，他家虽然非常有钱，但他不是财主，也不放贷。但是他在生活中观察
+到了放贷和利息计算这种行为，并对此进行了细致的研究，最终给出了复利的终极计算方
+式，这个终极的计算方式里就包含了$e$。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\linewidth]{money/e-interest.png}
+\caption{$ e$ 与利息}
+\centering
+\end{figure}
+
+在在瑞士苏黎世召开的1994年第22届国际数学家大会上，瑞士邮政发行的纪念邮票的邮票
+图案就是雅各布·伯努利的头像，和以他名字命名的大数定律及大数定律的几何示意图。最
+后告诫大家千万别找数学家借钱，数学家会把每一分该得的钱都计算的清清楚楚，分毫不
+差。
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[t]{.45\linewidth}
+\includegraphics[height=1.8in]{money/bernoulli.png}
+\caption{Jakob Bernoulli}
+\end{minipage}
+\begin{minipage}[t]{.45\linewidth}
+\includegraphics[width=\textwidth]{money/stamp.png}
+\caption{纪念邮票}
+\end{minipage}
 \end{figure}

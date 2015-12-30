@@ -14,11 +14,17 @@
 \usepackage{graphicx}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{listings}
 \usepackage[colorlinks,bookmarks=false,CJKbookmarks=false,unicode=true,
             linkcolor=blue,anchorcolor=blue,citecolor=green]{hyperref}
 
 %% graphics settings
 \graphicspath{{img/}}
+
+%% listings settings
+\lstset{inputpath=code,language=python,numbers=left,numbersep=5pt,
+        showtabs=false}
+\renewcommand{\lstlistingname}{代码片段}
 
 %% math settings
 \newtheoremstyle{mystyle}{3pt}{3pt}{\songti}{0cm}{\heiti}{}{1em}{}
