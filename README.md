@@ -47,10 +47,9 @@
 
   对于新的 Mac 系统，字体配置文件在：/usr/local/texlive/2015/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.def
   在相应的地方加上:
-
-  \setCJKfamilyfont { zhyou  } { YouYuan  }
-  
-  \NewDocumentCommand \youyuan  {  } { \CJKfamily { zhyou  }  }
+    
+      \setCJKfamilyfont { zhyou  } { YouYuan  }
+      \NewDocumentCommand \youyuan  {  } { \CJKfamily { zhyou  }  }
 
 ### FAQ
 
