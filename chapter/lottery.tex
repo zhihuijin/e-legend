@@ -27,20 +27,39 @@ iPad、iPhone 等，房地产公司的奖品甚至是豪车（宝马、奔驰等
 Cassie 的第一份工作在一家小公司，公司只有十个员工，公司年会的时候，老板准备了十
 份礼物，抽了十次奖，可是 Cassie 的运气不好，一次都没中，她非常沮丧。可是 Cassie
 转念一想，十次抽奖，一次都不中的概率应该也不低，所以她也没有太介意。第二年，
-Cassie 跳槽到一家有一万员工的大公司，很幸运遇到了一个土豪老板。土豪老板在公司的
-年会上宣布：今年的抽奖人人有份，公司准备了一万份奖品，抽一万次奖。每个人听到这
-个消息都非常兴奋，天上掉下来一万个馅饼，不被砸中实在是天理难容，说不过去。
-Cassie 非常期待自己能中奖，可以结果完全出乎意料之外，一万个馅饼一个都没砸中 
-Cassie。更悲惨的是，隔壁的帅哥居然连中十个。Cassie 觉得自己的人生太悲催了，最倒
-霉的事情就是自己倒霉的时候看到旁边的帅哥那么幸福。
+Cassie 跳槽到一家有一万员工的大公司，很幸运遇到了一个土豪老板。
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{lottery/boss.png}
+\caption{土豪老板}
+\centering
+\end{figure}
+
+土豪老板在公司的年会上宣布：今年的抽奖人人有份，公司准备了一万份奖品，抽一万次
+奖。每个人听到这个消息都非常兴奋，天上掉下来一万个馅饼，不被砸中实在是天理难容
+，说不过去。Cassie 非常期待自己能中奖，可以结果完全出乎意料之外，一万个馅饼一个
+都没砸中 Cassie。更悲惨的是，隔壁的帅哥居然连中十个。Cassie 觉得自己的人生太悲
+催了，最倒霉的事情就是自己倒霉的时候看到旁边的帅哥那么幸福。
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{lottery/badluck.png}
+\caption{倒霉时刻}
+\centering
+\end{figure}
 
 Cassie 怎么也想不明白，去年十次抽奖一次没中还可以理解，今年是一万次抽奖，自己能
 中一次的概率应该很高，怎么就恁是没中呢？她觉得自己的人生一定是被诅咒了，开始怀
-疑自己的人生。我们从数学的角度帮 Cassie 分析一下她在两次公司年会中中奖的概率到
-底有多高。
+疑自己的人生。
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{lottery/curse.png}
+\caption{诅咒的人生}
+\centering
+\end{figure}
 
-假设公司有 $n$ 个人，一次抽奖每个人中奖的概率都是 $1/n$，不中奖的概率是
-$1-1/n$，每次抽奖都是一个独立事件，根据乘法原理 $n$ 次不中奖的概率为：
+我们从数学的角度帮 Cassie 分析一下她在两次公司年会中中奖的概率到
+底有多高。假设公司有 $n$ 个人，一次抽奖每个人中奖的概率都是 $1/n$，不中奖的概
+率是 $1-1/n$，每次抽奖都是一个独立事件，根据乘法原理 $n$ 次不中奖的概率为：
  $$ p_n = (1- \frac1n)^n $$
 Cassie 的第一个公司 $n=10$，直觉上这个不中奖概率还挺高。第二个公司$ n=10000$，
 不中奖概率是一个小于 1 的数的 10000 次方，直觉上应该很小很小。网络上流传着这样
@@ -50,7 +69,6 @@ $$ 0.99^{365} = 0.03 $$
 只要每天增加一点正能量，一年后的正能量就会变成 37.8 倍，只要每天增加一点负能量，
 一年后基本就不剩正能量了。那么一个 小于 1 的数的 10000 次方到底是多少呢？我们帮
  Cassie 算一下，整理成表格。
-
 \begin{table}[htbp]
 \centering
 \caption{不中奖概率}
@@ -74,12 +92,20 @@ $$ 0.99^{365} = 0.03 $$
 实际在数学上存在这样一个式子：
 $$ \lim_{n \rightarrow +\infty } (1 - \frac1n)^n = \frac1e $$
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{lottery/e.png}
+\caption{中奖概率}
+\centering
+\end{figure}
+
 证明过程也不难：
 \begin{align*}
 \lim_{n \rightarrow +\infty } (1 - \frac1n)^n & = \lim_{n \rightarrow +\infty } (\frac {n-1} {n})^n   \\
-&=  \frac {1} {\lim_{n \rightarrow +\infty } (\frac {n} {n-1})^n} \\
-&=  \frac {1} {\lim_{n \rightarrow +\infty } ( 1 + \frac {1}{n-1})^n}  \\
-&=  \frac {1} {\lim_{n \rightarrow +\infty } ( 1 + \frac {1}{n-1})^{n-1} (1+\frac {1} {n-1})} \\
+&=  \frac {1} {\displaystyle \lim_{n \rightarrow +\infty } (\frac {n} {n-1})^n} \\
+&=  \frac {1} {\displaystyle \lim_{n \rightarrow +\infty } ( 1 + \frac {1}{n-1})^n}  \\
+&=  \frac {1} {\displaystyle \lim_{n \rightarrow +\infty } ( 1 + \frac {1}{n-1})^{n-1} (1+\frac {1} {n-1})} \\
+&=  \frac {1} {e \displaystyle \lim_{n \rightarrow +\infty } (1+\frac {1} {n-1})} \\
 &= \frac1e
 \end{align*}
 
